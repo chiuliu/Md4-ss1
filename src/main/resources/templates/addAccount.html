@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Add Product</h1>
+<form action="/account/add" method="post" th:object="${account}">
+    <table border="1" cellpadding="10" cellspacing="5">
+        <tr>
+            <th>
+                <label>full Name</label>
+            </th>
+            <td>
+                <input type="text" th:field="*{fullName}">
+                <span th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"></span>
+            </td>
+        </tr>
+        <tr>
+            <th><label>Address</label></th>
+            <td><input type="text" th:field="*{address}"> </td>
+        </tr>
+        <tr>
+            <th><label>Phone</label></th>
+            <td><input type="text" th:field="*{phone}"> </td>
+        </tr>
+        <tr>
+            <th><label>dateOfBirth</label></th>
+            <td><input type="date" th:field="*{dateOfBirth}"> </td>
+            <span th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"></span>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" th:value="'Add'"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

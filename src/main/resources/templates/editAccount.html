@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<h1>Edit Account</h1>
+<form action="/account/edit" method="post" th:object="${account}">
+    <table border="1" cellpadding="10" cellspacing="5">
+        <input type="hidden" th:field="*{id}" readonly>
+        <tr>
+            <th><label>full Name</label></th>
+            <td><input type="text" th:field="*{fullName}"> </td>
+        </tr>
+        <tr>
+            <th><label>address</label></th>
+            <td><input type="number" th:field="*{address}"> </td>
+        </tr>
+        <tr>
+            <th><label>Phone</label></th>
+            <td><input type="text" th:field="*{phone}"> </td>
+        </tr>
+        <tr>
+            <th><label>dateOfBirth</label></th>
+            <td><input type="date" th:field="*{dateOfBirth}"> </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" th:value="'Update'"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
